@@ -1,0 +1,83 @@
+﻿@model AppWeb.CyaConsultorias.Models.BlogModel
+@{ 
+    ViewData["Title"] = "Nuevo Blog";
+}
+<!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Nuevo Blog</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+<!-- ================ contact section start ================= -->
+<section class="contact-section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h2 class="contact-title">Diligencie el nuevo Blog</h2>
+            </div>
+            <div class="col-lg-8">
+                @using (Html.BeginForm("NewBlog", "Home", FormMethod.Post))
+                {
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <h4>Título</h4>
+                @Html.TextBoxFor(m => m.Titulo, new { placeholder = "Ingrese título del blog", @class = "form-control", @required = "required", @maxlength = "100", autocomplete = "off" })
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <h4>Autor</h4>
+                @Html.TextBoxFor(m => m.Autor, new { placeholder = "Ingrese nombre del autor", @class = "form-control", @required = "required", @maxlength = "50", autocomplete = "off" })
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <h4>Categoría</h4>
+                @Html.DropDownListFor(m => m.Categoria, ViewData["categoriaSelect"] as SelectList, "Seleccione una Categoría", htmlAttributes: new { placeholder = "Seleccione categoría del blog", @class = "form-control", @required = "required" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <h4>Resumen</h4>
+                @Html.TextAreaFor(m => m.Resumen, new { rows = 3, columns = 30, placeholder = "Ingrese resumen del blog", @class = "form-control w-100", @maxlength = "200", @style = "resize:none;", autocomplete = "off" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <h4>Cuerpo</h4>
+                @Html.TextAreaFor(m => m.Cuerpo, new { rows = 12, columns = 30, placeholder = "Ingrese cuerpo del blog", @class = "form-control w-100", @minLength = "50", @required = "required", @style = "resize:none;", autocomplete = "off" })
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <h4>Fecha de registro</h4>
+                @Html.TextBoxFor(m => m.DateTime, new { @type = "date", @class = "form-control datepicker", placeholder = "Ingrese fecha de registro", @max = @DateTime.Now, @required = "required", autocomplete = "off" })
+            </div>
+        </div>
+    </div>
+                    <div class="form-group mt-3">
+                        <button type="submit" class="button button-contactForm boxed-btn">Guardar</button>
+                    </div>}
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var newBlogSaved = '@TempData["NewBlogSaved"]';
+        if (newBlogSaved != null && newBlogSaved != '') {
+            alert(newBlogSaved);
+        }
+    });
+</script>
+<!-- ================ contact section end ================= -->
