@@ -1,0 +1,186 @@
+﻿@model AppWeb.CyaConsultorias.Models.Blog
+@{
+    ViewData["Title"] = "Blog";
+}
+
+<!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Blog</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+<!--================Blog Area =================-->
+<section class="blog_area section-padding">
+    <div class="container">
+        @*<div class="row">
+            <div class="col-lg-6">
+                <aside class="single_sidebar_widget">
+                    <a class="twitter-timeline" data-lang="es" data-height="600" data-theme="light" href="https://twitter.com/Contaduria_CGN?ref_src=twsrc%5Etfw">Tweets by Contaduria_CGN</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </aside>
+            </div>
+            <div class="col-lg-6">
+                <aside class="single_sidebar_widget">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6851961845134196736" height="600" width="540" frameborder="0" allowfullscreen="" title="Publicación integrada">LinkedIn</iframe>
+                </aside>
+            </div>
+        </div>*@
+        <div class="row">
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="blog_left_sidebar">
+                    @foreach (var blog in Model.Blogs)
+                    {
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="@blog.ImagenPath" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>@blog.DiaFecha</h3>
+                                    <p>@blog.MesFecha</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>@blog.Titulo</h2>
+                                </a>
+                                <p>
+                                    @blog.Resumen
+                                </p>
+                                <ul class="blog-info-link">
+                                    <li><i class="fa fa-book"></i> @blog.Categoria</li>
+                                    <li><i class="fa fa-user"></i> @blog.Autor</li>
+                                </ul>
+                            </div>
+                        </article>
+                    }
+
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                @if (Model.PaginaActual == 1)
+                                {
+                                    <a class="page-link" aria-label="Previous" onclick="return false;">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="#" onclick="goBlogView('@(Model.PaginaActual - 1)', '@Model.FiltroAutor', '@Model.FiltroCategoria')" class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                }
+                            </li>
+                            @for (int i = 0; i < Model.CantidadPaginas; i++)
+                            {
+                                @if ((i + 1) == Model.PaginaActual)
+                                {
+                                    <li class="page-item active">
+                                        <a class="page-link" onclick="return false;">@(i+1)</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="page-item">
+                                        <a href="#" onclick="goBlogView('@(i+1)', '@Model.FiltroAutor', '@Model.FiltroCategoria')" class="page-link">@(i+1)</a>
+                                    </li>
+                                }
+                            }
+                            <li class="page-item">
+                                @if (Model.PaginaActual == Model.CantidadPaginas)
+                                {
+                                    <a class="page-link" aria-label="Next" onclick="return false;">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="#" onclick="goBlogView('@(Model.PaginaActual + 1)','@Model.FiltroAutor','@Model.FiltroAutor')" class="page-link" aria-label="Next">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                }
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget post_category_widget">
+                        <h4 class="widget_title">Categorías</h4>
+                        <ul class="list cat-list">
+                            @foreach (var item in Model.Categorias)
+                            {
+                                <li>
+                                    <a href="#" onclick="goBlogView('1',null,'@item.Categoria')" class="d-flex">
+                                        <p>@item.Categoria </p>
+                                        <p>(@item.Cantidad)</p>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </aside>
+
+                    <aside class="single_sidebar_widget post_category_widget">
+                        <h4 class="widget_title">Autores</h4>
+                        <ul class="list cat-list">
+                            @foreach (var item in Model.Autores)
+                            {
+                                <li>
+                                    <a href="#" onclick="goBlogView('1','@item.Autor', null)" class="d-flex">
+                                        <p>@item.Autor</p>
+                                        <p> (@item.Cantidad)</p>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </aside>
+
+                    @*<aside class="single_sidebar_widget newsletter_widget">
+            <h4 class="widget_title">Notificaciones</h4>
+            <form action="#">
+                <div class="form-group">
+                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                           onblur="this.placeholder = 'Ingresar email'" placeholder='Ingresar email' required>
+                </div>
+                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                        type="submit">
+                    Subscribir
+                </button>
+            </form>
+        </aside>*@
+                    <aside class="single_sidebar_widget">
+                        <a class="twitter-timeline" data-lang="es" data-height="530" data-theme="light" href="https://twitter.com/Contaduria_CGN?ref_src=twsrc%5Etfw">Tweets by Contaduria_CGN</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </aside>
+                    <aside class="single_sidebar_widget">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6851961845134196736" height="530" frameborder="0" allowfullscreen="" title="LinkedIn">LinkedIn by Forbes</iframe>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================Blog Area =================-->
+@*<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });
+    </script>*@

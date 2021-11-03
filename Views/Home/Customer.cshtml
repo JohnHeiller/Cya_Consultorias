@@ -1,0 +1,84 @@
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<div>
+    <!-- bradcam_area  -->
+    <div class="bradcam_area breadcam_bg_4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Clientes</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+    <!-- ================ certification section start ================= -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="contact-title">Solicitud de Certificado</h2>
+                </div>
+                <div class="col-lg-8">
+                    <form class="form-contact contact_form" action="NewCertification" method="post" id="certificationForm" novalidate="novalidate">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="certificationType">Tipo de Certificación (*)</label>
+                                    <select class="form-control valid" name="certificationType" id="certificationType" placeholder="Selecciona Tipo de Certificación">
+                                        <option value="" selected>Selecciona Tipo de Certificación</option>
+                                        @foreach (var item in ViewData["certificationTypeSelect"] as SelectList)
+                                        {
+                                            <option value="@item.Value">@item.Text</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="identificationType">Tipo de Identificación (*)</label>
+                                    <select class="form-control valid" name="identificationType" id="identificationType" placeholder="Selecciona Tipo de Documento">
+                                        <option value="" selected>Selecciona Tipo de Documento</option>
+                                        @foreach (var item in ViewData["identificationTypeSelect"] as SelectList)
+                                        {
+                                            <option value="@item.Value">@item.Text</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="identificationNumber">Número de Identificación (*)</label>
+                                    <input class="form-control valid" name="identificationNumber" id="identificationNumber" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingresa Número de Identificación'" placeholder="Ingresa Número de Identificación">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label>Datos de Contacto (*)</label>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="email">Correo electrónico</label>
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingresa Correo electrónico'" placeholder="Ingresa Correo electrónico">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="phone">Teléfono</label>
+                                        <input class="form-control valid" name="phone" id="phone" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingresa Teléfono o Celular'" placeholder="Ingresa Teléfono o Celular">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit" class="button button-contactForm boxed-btn">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ certification section end ================= -->
+</div>

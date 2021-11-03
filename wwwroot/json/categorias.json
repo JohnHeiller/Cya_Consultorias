@@ -1,0 +1,39 @@
+﻿{
+  "CategoriasList": [
+    {
+      "Codigo": "DEEM",
+      "Nombre": "Desarrollo Empresarial",
+      "ImagenPath": "/img/blog/single_blog_1.png"
+    },
+    {
+      "Codigo": "COUC",
+      "Nombre": "Couching",
+      "ImagenPath": "/img/blog/single_blog_1.png"
+    },
+    {
+      "Codigo": "NEGO",
+      "Nombre": "Negocios",
+      "ImagenPath": "/img/blog/single_blog_1.png"
+    },
+    {
+      "Codigo": "ASLE",
+      "Nombre": "Asesoría Legal",
+      "ImagenPath": "/img/blog/single_blog_1.png"
+    },
+    {
+      "Codigo": "AUDI",
+      "Nombre": "Auditoría",
+      "ImagenPath": "/img/blog/single_blog_1.png"
+    },
+    {
+      "Codigo": "COCO",
+      "Nombre": "Consultoria Contable",
+      "ImagenPath": "/img/blog/single_blog_1.png"
+    },
+    {
+      "Codigo": "FIPE",
+      "Nombre": "Finanzas Personales",
+      "ImagenPath": "/img/blog/single_blog_1.png"
+    }
+  ]
+}
