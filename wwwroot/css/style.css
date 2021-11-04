@@ -7005,4 +7005,13 @@ h6 {
     margin-top: 16px;
 }
 
+.submenu3-item {
+    visibility: hidden
+}
+
+@media (max-width: 767px) {
+    .submenu3-item {
+        visibility: visible
+    }
+}
 /*# sourceMappingURL=style.css.map */
