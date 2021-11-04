@@ -6,7 +6,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@ViewData["Title"] - C&A Ltda.</title>
+    @if (ViewData["Title"].ToString().Contains("C&A SAS"))
+    {
+        <title>@ViewData["Title"]</title>
+    }
+    else
+    {
+        <title>@ViewData["Title"] | C&A</title>
+    }
     <!-- CSS here -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @*<link rel="stylesheet" href="~/css/site.css" />*@
@@ -23,6 +30,7 @@
     <link rel="stylesheet" href="~/css/slicknav.css">
     <link rel="stylesheet" href="~/css/style.css">
     <!-- <link rel="stylesheet" href="~/css/responsive.css"> -->
+    <link rel="icon" type="image/png" href="~/img/just_logo.png" sizes="128x128" />
 </head>
 <body>
     <header>
@@ -55,14 +63,14 @@
                 <div class="container">
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
+                            <div class="col-xl-4 col-lg-2">
                                 <div class="logo">
                                     <a asp-area="" asp-controller="Home" asp-action="Index">
                                         <img src="~/img/logo.png" alt="">
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-7">
+                            <div class="col-xl-7 col-lg-8">
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
@@ -74,29 +82,30 @@
                                                     <li>
                                                         <a href="#" onclick="goServiceSection('GrupoNegociosId')">Consultoría Empresarial</a>
                                                         @*<ul class="submenu2" style="left:200px;top:15px;">
-                                                                <li><a href="#">Desarrollo Empresarial</a></li>
-                                                                <li><a href="#">Evaluación de Proyectos</a></li>
-                                                                <li><a href="#">Selección de Talento Humano</a></li>
-                                                            </ul>*@
+                        <li><a href="#">Desarrollo Empresarial</a></li>
+                        <li><a href="#">Evaluación de Proyectos</a></li>
+                        <li><a href="#">Selección de Talento Humano</a></li>
+                    </ul>*@
                                                     </li>
                                                     <li>
                                                         <a href="#" onclick="goServiceSection('GrupoTributarioId')">Tributaria y Auditoría</a>
                                                         @*<ul class="submenu2" style="left:200px;top:15px;">
-                                                                <li><a href="#">Revisoría Fiscal</a></li>
-                                                                <li><a href="#">Auditoría Externa</a></li>
-                                                                <li><a href="#">Consultoría y Asesoría en NIIF, NIC-SP y NIAS</a></li>
-                                                            </ul>*@
+                        <li><a href="#">Revisoría Fiscal</a></li>
+                        <li><a href="#">Auditoría Externa</a></li>
+                        <li><a href="#">Consultoría y Asesoría en NIIF, NIC-SP y NIAS</a></li>
+                    </ul>*@
                                                     </li>
                                                     <li><a href="#">Consultoría Legal</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="#" onclick="goBlogView('1',null,null)">Blog</a></li>
                                             <li><a asp-area="" asp-controller="Home" asp-action="Customer">Clientes</a></li>
+                                            <li><a class="submenu3-item" asp-area="" asp-controller="Home" asp-action="Contact">Contáctanos</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="col-xl-1 col-lg-2 d-none d-lg-block">
                                 <div class="Appointment">
                                     @*<div class="search_button">
                                             <a href="#">
@@ -104,7 +113,7 @@
                                             </a>
                                         </div>*@
                                     <div class="book_btn d-none d-lg-block">
-                                        <a asp-area="" asp-controller="Home" asp-action="Contact">Contáctenos</a>
+                                        <a asp-area="" asp-controller="Home" asp-action="Contact">Contáctanos</a>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +162,7 @@
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <h3 class="footer_title" style="margin-bottom: 10px;">
-                                Consultorías y Asesorías <br />Empresariales Ltda.
+                                Consultorías y Asesorías <br />Empresariales SAS
                             </h3>
                             <div class="footer_logo" style="margin-bottom: 10px;">
                                 <a href="#">
@@ -187,9 +196,8 @@
                                 <a asp-area="" asp-controller="Home" asp-action="Services">Servicios</a>
                             </h3>
                             <ul>
-                                <li><a href="#">Empresarial</a></li>
-                                <li><a href="#">Tributaria</a></li>
-                                <li><a href="#">Auditoría</a></li>
+                                <li><a href="#" onclick="goServiceSection('GrupoNegociosId')">Empresarial</a></li>
+                                <li><a href="#" onclick="goServiceSection('GrupoTributarioId')">Tributaria</a></li>
                                 <li><a href="#">Legal</a></li>
                             </ul>
 
@@ -202,9 +210,9 @@
                             </h3>
                             <ul>
                                 <li><a asp-area="" asp-controller="Home" asp-action="About">Nosotros</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Clientes</a></li>
-                                <li><a href="#">Contáctenos</a></li>
+                                <li><a href="#" onclick="goBlogView('1',null,null)">Blog</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Customer">Clientes</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contáctanos</a></li>
                             </ul>
                         </div>
                     </div>
