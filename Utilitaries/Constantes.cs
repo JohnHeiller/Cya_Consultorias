@@ -15,11 +15,11 @@ namespace AppWeb.CyaConsultorias.Utilitaries
 
         public static List<SelectListItem> IdentificationTypes = new List<SelectListItem>()
         {
-            new SelectListItem{ Value = "CC", Text = "Cédula de Ciudadanía"},
-            new SelectListItem{ Value = "CE", Text = "Cédula de Extranjería"},
-            new SelectListItem{ Value = "NIP", Text = "Número de Ientificación Personal"},
-            new SelectListItem{ Value = "NIT", Text = "Número de Identificación Tributaria"},
-            new SelectListItem{ Value = "PAP", Text = "Pasaporte"}
+            new SelectListItem{ Value = "CC", Text = "CC - Cédula de Ciudadanía"},
+            new SelectListItem{ Value = "CE", Text = "CE - Cédula de Extranjería"},
+            new SelectListItem{ Value = "NIP", Text = "NIP - Número de Identificación Personal"},
+            new SelectListItem{ Value = "NIT", Text = "NIT - Número de Identificación Tributaria"},
+            new SelectListItem{ Value = "PAP", Text = "PAP - Pasaporte"}
         };
 
         public static List<SelectListItem> CertificationTypes = new List<SelectListItem>()
