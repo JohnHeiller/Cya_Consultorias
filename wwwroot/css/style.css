@@ -3502,6 +3502,10 @@ h3 {
   background-image: url(../img/about/legal1.png);
 }
 
+.service_bg_4 {
+    background-image: url(../img/about/experts.png);
+}
+
 /* line 8, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
 .service_area {
   padding-top: 80px;
@@ -7005,13 +7009,4 @@ h6 {
     margin-top: 16px;
 }
 
-.submenu3-item {
-    visibility: hidden;
-}
-
-@media (max-width: 767px) {
-    .submenu3-item {
-        visibility: visible;
-    }
-}
 /*# sourceMappingURL=style.css.map */

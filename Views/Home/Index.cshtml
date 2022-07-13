@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "C&A SAS | Consultorías y Asesorías Empresariales";
+    ViewData["Title"] = "Inicio";
 }
 <!-- slider_area_start -->
 <div class="slider_area">
@@ -97,12 +97,12 @@
                 <div class="single_service service_bg_1">
                     <div class="service_hover">
                         <img src="~/img/svg_icon/case.svg" alt="">
-                        <h3>Consultoría de <br /> Negocios</h3>
+                        <h3>Consultoría Empresarial</h3>
                         <div class="hover_content">
                             <div class="hover_content_inner">
                                 <a href="#" onclick="goServiceSection('GrupoNegociosId')">
-                                    <h4>Consultoría de <br /> Negocios</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <h4>Consultoría Empresarial</h4>
+                                    <p>Aplica estrategias de operación, control, innovación y gestión en los negocios. </p>
                                 </a>
                             </div>
                         </div>
@@ -113,12 +113,12 @@
                 <div class="single_service service_bg_2">
                     <div class="service_hover">
                         <img src="~/img/svg_icon/bar-chart.svg" alt="" style="width: 45px; height: 40px;">
-                        <h3>Consultoría Tributaria y <br /> Auditoría</h3>
+                        <h3>Consultoría Financiera y Tributaria</h3>
                         <div class="hover_content">
                             <div class="hover_content_inner">
                                 <a href="#" onclick="goServiceSection('GrupoTributarioId')">
-                                    <h4>Consultoría Tributaria y <br /> Auditoría</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <h4>Consultoría Financiera y Tributaria</h4>
+                                    <p>Haz el análisis y la valoración requerida para la toma de decisiones con beneficio financiero.</p>
                                 </a>
                             </div>
                         </div>
@@ -126,15 +126,15 @@
                 </div>
             </div>
             <div class="col-xl-4 col-md-4">
-                <div class="single_service service_bg_3">
+                <div class="single_service service_bg_4">
                     <div class="service_hover">
-                        <img src="~/img/svg_icon/legal-paper.svg" alt="">
-                        <h3>Asesoría Legal <br />&nbsp;</h3>
+                        <img src="~/img/svg_icon/puzzle.svg" alt="" style="width: 45px; height: 40px;">
+                        <h3>Auditoría y Revisoría Fiscal</h3>
                         <div class="hover_content">
                             <div class="hover_content_inner">
-                                <a href="#">
-                                    <h4>Asesoría Legal<br />&nbsp;</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#" onclick="goServiceSection('GrupoAuditoriaId')">
+                                    <h4>Auditoría y Revisoría Fiscal<br />&nbsp;</h4>
+                                    <p>Realiza un peritaje para mantener la gestión contable y administrativa en orden.</p>
                                 </a>
                             </div>
                         </div>
@@ -142,6 +142,24 @@
                 </div>
             </div>
         </div>
+        @*<div class="row">
+            <div class="col-xl-6 col-md-6">
+                <div class="single_service service_bg_3">
+                    <div class="service_hover">
+                        <img src="~/img/svg_icon/legal-paper.svg" alt="">
+                        <h3>Asesoría Legal y Laboral <br />&nbsp;</h3>
+                        <div class="hover_content">
+                            <div class="hover_content_inner">
+                                <a href="#">
+                                    <h4>Asesoría Legal y Laboral<br />&nbsp;</h4>
+                                    <p>Recibe orientación para resolución de asuntos sobre la aplicación de la ley.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
     </div>
 </div>
 <!-- grupos de servicios -->
@@ -157,11 +175,11 @@
             <div class="col-xl-6 col-lg-6">
                 <div class="about_info">
                     <h3>Expertos en Grandes Negocios</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p>Nuestros @(DateTime.Now.Year - 2004) años de experiencia confiable nos permiten apoyar tus procesos gerenciales, financieros, contables y tributarios, siempre pretendiendo el crecimiento de tu negocio de manera efectiva y al menor costo. Así lo demuestra nuestro trabajo con empresas en los sectores:</p>
                     <ul>
-                        <li> Tipo de negocio 1. </li>
-                        <li> Tipo de negocio 2. </li>
-                        <li> Tipo de negocio 3. </li>
+                        <li> Manufactura y Retail. </li>
+                        <li> Agroindustria. </li>
+                        <li> Tecnología y servicios. </li>
                     </ul>
                     <div class="about_btn">
                         <a class="boxed-btn3" asp-area="" asp-controller="Home" asp-action="About">Conócenos</a>
@@ -171,74 +189,74 @@
         </div>
     </div>
 </div>
+<br />
 <!--/ about  -->
+@*<div class="testmonial_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-20">
+                        <h3>Nuestros Clientes</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="testmonial_active2 owl-carousel">
+                        <div class="single_slider text-center">
+                            <input id="img_owlDot1" value="url(../img/testmonial/1.png)" hidden />
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="author_name text-center">
+                                <h4>Compañia 1</h4>
+                                <span> Business Owner</span>
+                            </div>
+                        </div>
+                        <div class="single_slider text-center">
+                            <input id="img_owlDot2" value="url(../img/testmonial/2.png)" hidden />
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="author_name text-center">
+                                <h4>Compañia 2</h4>
+                                <span> Business Owner</span>
+                            </div>
+                        </div>
+                        <div class="single_slider text-center">
+                            <input id="img_owlDot3" value="url(../img/testmonial/3.png)" hidden />
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="author_name text-center">
+                                <h4>Compañia 3</h4>
+                                <span> Business Owner</span>
+                            </div>
+                        </div>
+                        <div class="single_slider text-center">
+                            <input id="img_owlDot4" value="url(../img/testmonial/1.png)" hidden />
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="author_name text-center">
+                                <h4>Compañia 4</h4>
+                                <span> Business Owner</span>
+                            </div>
+                        </div>
+                        <div class="single_slider text-center">
+                            <input id="img_owlDot5" value="url(../img/testmonial/2.png)" hidden />
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="author_name text-center">
+                                <h4>Compañia 5</h4>
+                                <span> Business Owner</span>
+                            </div>
+                        </div>
+                        <div class="single_slider text-center">
+                            <input id="img_owlDot6" value="url(../img/testmonial/3.png)" hidden />
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="author_name text-center">
+                                <h4>Compañia 6</h4>
+                                <span> Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="testmonial_area">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="section_title text-center mb-20">
-                    <h3>Nuestros Clientes</h3>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xl-10 offset-xl-1">
-                <div class="testmonial_active2 owl-carousel">
-                    <div class="single_slider text-center">
-                        <input id="img_owlDot1" value="url(../img/testmonial/1.png)" hidden />
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="author_name text-center">
-                            <h4>Compañia 1</h4>
-                            <span> Business Owner</span>
-                        </div>
-                    </div>
-                    <div class="single_slider text-center">
-                        <input id="img_owlDot2" value="url(../img/testmonial/2.png)" hidden />
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="author_name text-center">
-                            <h4>Compañia 2</h4>
-                            <span> Business Owner</span>
-                        </div>
-                    </div>
-                    <div class="single_slider text-center">
-                        <input id="img_owlDot3" value="url(../img/testmonial/3.png)" hidden />
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="author_name text-center">
-                            <h4>Compañia 3</h4>
-                            <span> Business Owner</span>
-                        </div>
-                    </div>
-                    <div class="single_slider text-center">
-                        <input id="img_owlDot4" value="url(../img/testmonial/1.png)" hidden />
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="author_name text-center">
-                            <h4>Compañia 4</h4>
-                            <span> Business Owner</span>
-                        </div>
-                    </div>
-                    <div class="single_slider text-center">
-                        <input id="img_owlDot5" value="url(../img/testmonial/2.png)" hidden />
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="author_name text-center">
-                            <h4>Compañia 5</h4>
-                            <span> Business Owner</span>
-                        </div>
-                    </div>
-                    <div class="single_slider text-center">
-                        <input id="img_owlDot6" value="url(../img/testmonial/3.png)" hidden />
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="author_name text-center">
-                            <h4>Compañia 6</h4>
-                            <span> Business Owner</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
+    </div>*@
 <!-- project  -->
 <div class="project_area">
     <div class="container">
@@ -247,8 +265,7 @@
                 <div class="project_info text-center">
                     <h3>¿Tienes algún proyecto?</h3>
                     <p>
-                        Nam libero tempore, cum soluta nobis est eligendi optio <br>
-                        cumque nihil impedit quo minus.
+                        Con una perspectiva integral y trabajo en equipo, nos enfocaremos en desarrollar esa idea o negocio que tienes.
                     </p>
                     <a asp-area="" asp-controller="Home" asp-action="Contact" class="boxed-btn3-white">Contáctanos</a>
                 </div>

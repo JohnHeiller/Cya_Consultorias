@@ -6,14 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    @if (ViewData["Title"].ToString().Contains("C&A SAS"))
-    {
-        <title>@ViewData["Title"]</title>
-    }
-    else
-    {
-        <title>@ViewData["Title"] | C&A</title>
-    }
+    <title>@ViewData["Title"] - C&A SAS</title>
     <!-- CSS here -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @*<link rel="stylesheet" href="~/css/site.css" />*@
@@ -30,7 +23,6 @@
     <link rel="stylesheet" href="~/css/slicknav.css">
     <link rel="stylesheet" href="~/css/style.css">
     <!-- <link rel="stylesheet" href="~/css/responsive.css"> -->
-    <link rel="icon" type="image/png" href="~/img/just_logo.png" sizes="128x128" />
 </head>
 <body>
     <header>
@@ -51,8 +43,8 @@
                         <div class="col-xl-6 col-md-6">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i> gerencia@cyaconsultorias.com</a></li>
-                                    <li><a href="#"> <i class="fa fa-phone"></i> +57 (8) 674 1192</a></li>
+                                    <li><a> <i class="fa fa-envelope"></i> gerencia@cyaconsultorias.com</a></li>
+                                    <li><a> <i class="fa fa-phone"></i> +57 (8) 674 1192</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -63,49 +55,41 @@
                 <div class="container">
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
-                            <div class="col-xl-4 col-lg-2">
+                            <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
                                     <a asp-area="" asp-controller="Home" asp-action="Index">
                                         <img src="~/img/logo.png" alt="">
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-xl-7 col-lg-8">
+                            <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a asp-area="" asp-controller="Home" asp-action="Index"> Inicio</a></li>
+                                            <li><a class="active" asp-area="" asp-controller="Home" asp-action="Index"> Inicio</a></li>
                                             <li><a asp-area="" asp-controller="Home" asp-action="About"> Nosotros</a></li>
                                             <li>
                                                 <a href="#" onclick="goServiceSection('InitServicesId')"> Servicios <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li>
                                                         <a href="#" onclick="goServiceSection('GrupoNegociosId')">Consultoría Empresarial</a>
-                                                        @*<ul class="submenu2" style="left:200px;top:15px;">
-                        <li><a href="#">Desarrollo Empresarial</a></li>
-                        <li><a href="#">Evaluación de Proyectos</a></li>
-                        <li><a href="#">Selección de Talento Humano</a></li>
-                    </ul>*@
                                                     </li>
                                                     <li>
-                                                        <a href="#" onclick="goServiceSection('GrupoTributarioId')">Tributaria y Auditoría</a>
-                                                        @*<ul class="submenu2" style="left:200px;top:15px;">
-                        <li><a href="#">Revisoría Fiscal</a></li>
-                        <li><a href="#">Auditoría Externa</a></li>
-                        <li><a href="#">Consultoría y Asesoría en NIIF, NIC-SP y NIAS</a></li>
-                    </ul>*@
+                                                        <a href="#" onclick="goServiceSection('GrupoTributarioId')">Consultoría Financiera y Tributaria</a>
                                                     </li>
-                                                    <li><a href="#">Consultoría Legal</a></li>
+                                                    <li>
+                                                        <a href="#" onclick="goServiceSection('GrupoAuditoriaId')">Auditoría y Revisoría Fiscal</a>
+                                                    </li>
+                                                    @*<li><a href="#">Asesoría Legal y Laboral</a></li>*@
                                                 </ul>
                                             </li>
-                                            <li><a href="#" onclick="goBlogView('1',null,null)"> Blog</a></li>
-                                            <li><a asp-area="" asp-controller="Home" asp-action="Customer"> Clientes</a></li>
-                                            <li><a class="submenu3-item" asp-area="" asp-controller="Home" asp-action="Contact"> Contáctanos</a></li>
+                                            @*<li><a href="#" onclick="goBlogView('1',null,null)">Blog</a></li>*@
+                                            <li><a asp-area="" asp-controller="Home" asp-action="Customer">Clientes</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-xl-1 col-lg-2 d-none d-lg-block">
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="Appointment">
                                     @*<div class="search_button">
                                             <a href="#">
@@ -113,7 +97,7 @@
                                             </a>
                                         </div>*@
                                     <div class="book_btn d-none d-lg-block">
-                                        <a asp-area="" asp-controller="Home" asp-action="Contact">Contáctanos</a>
+                                        <a asp-area="" asp-controller="Home" asp-action="Contact">Contáctenos</a>
                                     </div>
                                 </div>
                             </div>
@@ -162,16 +146,15 @@
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <h3 class="footer_title" style="margin-bottom: 10px;">
-                                Consultorías y Asesorías <br />Empresariales SAS
+                                Consultorías y Asesorías Empresariales SAS
                             </h3>
                             <div class="footer_logo" style="margin-bottom: 10px;">
-                                <a href="#">
+                                <a asp-area="" asp-controller="Home" asp-action="Index">
                                     <img src="~/img/footer_logo.png" alt="">
                                 </a>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />
-                                sed do eiusmod tempor incididunt.
+                                Firma colombiana de contadores enfocada en el crecimiento de tu negocio.
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -198,9 +181,9 @@
                             <ul>
                                 <li><a href="#" onclick="goServiceSection('GrupoNegociosId')">Empresarial</a></li>
                                 <li><a href="#" onclick="goServiceSection('GrupoTributarioId')">Tributaria</a></li>
-                                <li><a href="#">Legal</a></li>
+                                <li><a href="#" onclick="goServiceSection('GrupoAuditoriaId')">Auditoría</a></li>
+                                @*<li><a href="#">Legal</a></li>*@
                             </ul>
-
                         </div>
                     </div>
                     <div class="col-xl-2 col-md-6 col-lg-2">
@@ -210,9 +193,9 @@
                             </h3>
                             <ul>
                                 <li><a asp-area="" asp-controller="Home" asp-action="About">Nosotros</a></li>
-                                <li><a href="#" onclick="goBlogView('1',null,null)">Blog</a></li>
+                                @*<li><a href="#">Blog</a></li>*@
                                 <li><a asp-area="" asp-controller="Home" asp-action="Customer">Clientes</a></li>
-                                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contáctanos</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contáctenos</a></li>
                             </ul>
                         </div>
                     </div>
@@ -225,7 +208,7 @@
                                 <li>Calle 15 nro. 40-01,</li>
                                 <li>C.C. Primavera Urbana Of. 533</li>
                                 <li>Villavicencio, Meta</li>
-                                <li><a href="#">gerencia@cyaconsultorias.com</a></li>
+                                <li><a>gerencia@cyaconsultorias.com</a></li>
                                 <li>+57 (8) 674 1192</li>
                             </ul>
                         </div>
@@ -242,9 +225,9 @@
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;
                             <script>document.write(new Date().getFullYear());</script>
-                            All rights reserved | Developed by
-                            <a href="https://www.linkedin.com/in/heiller-martinez/" target="_blank">John Heiller Martinez Cubillos</a>. Template designed by
-                            <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            Todos los derechos reservados | Plantilla Diseñado por
+                            <a href="https://colorlib.com" target="_blank">Colorlib</a>. Implementada por 
+                            <a href="https://www.linkedin.com/in/heiller-martinez/" target="_blank">John Heiller Martinez Cubillos</a>.
                         </p>
                     </div>
                 </div>

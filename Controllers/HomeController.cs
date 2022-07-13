@@ -26,6 +26,21 @@ namespace AppWeb.CyaConsultorias.Controllers
 
         public IActionResult Index()
         {
+            ConfiguracionModel configuracionModel = new ConfiguracionModel
+            {
+                ServicesModel = new List<ServicesModel>()
+            };
+            ServicesModel servicesModel = new ServicesModel
+            {
+                Sections = new List<SectionModel>(),
+                Details = new List<DetailModel>()
+            };
+            SectionModel sectionModel = new SectionModel();
+            DetailModel detailModel = new DetailModel();
+            servicesModel.Sections.Add(sectionModel);
+            servicesModel.Details.Add(detailModel);
+            configuracionModel.ServicesModel.Add(servicesModel);
+            var test = JsonConvert.SerializeObject(configuracionModel);
             return View();
         }
 
