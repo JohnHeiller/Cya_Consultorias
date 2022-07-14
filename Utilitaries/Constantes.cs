@@ -10,6 +10,7 @@ namespace AppWeb.CyaConsultorias.Utilitaries
     {
         public const string BlogsJsonPath = @"wwwroot\json\blogs.json";
         public const string CategoriasJsonPath = @"wwwroot\json\categorias.json";
+        public const string ServiciosJsonPath = @"wwwroot\json\servicios.json";
         public const string BodyEmailCertification = "Se ha recibido una Solicitud de Certificación con fecha {0}. \n\nUsuario(a): {1} {2},\nTeléfono: {3},\nCorreo electrónico: {4},\n\nEsto para un(a) {5} ({6}).";
         public const string BodyEmailContact = "Se ha recibido un mensaje de contacto PQR con fecha {0}. \n\nNombre: {1} {2},\nTeléfono: {3},\nCorreo electrónico: {4},\n\nCuya descripción es: {5}.";
 

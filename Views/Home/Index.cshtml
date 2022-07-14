@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Inicio";
 }
+@model AppWeb.CyaConsultorias.Models.ConfiguracionServiciosModel
 <!-- slider_area_start -->
 <div class="slider_area">
     <div class="slider_active owl-carousel">
@@ -93,54 +94,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-4 col-md-4">
-                <div class="single_service service_bg_1">
-                    <div class="service_hover">
-                        <img src="~/img/svg_icon/case.svg" alt="">
-                        <h3>Consultoría Empresarial</h3>
-                        <div class="hover_content">
-                            <div class="hover_content_inner">
-                                <a href="#" onclick="goServiceSection('GrupoNegociosId')">
-                                    <h4>Consultoría Empresarial</h4>
-                                    <p>Aplica estrategias de operación, control, innovación y gestión en los negocios. </p>
-                                </a>
+            @foreach (var ServiceItem in Model.ServicesModel)
+            {
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_service" style="background-image: url(@ServiceItem.UrlSmallBackgroundImage)">
+                        <div class="service_hover">
+                            <img src="@ServiceItem.UrlIcon" alt="" style="width: 45px; height: 40px;">
+                            <h3>@ServiceItem.Title</h3>
+                            <div class="hover_content">
+                                <div class="hover_content_inner">
+                                    <a href="@ServiceItem.Href" onclick="@ServiceItem.OnClick">
+                                        <h4>@ServiceItem.TitleHover</h4>
+                                        <p>@ServiceItem.SummeryIndex</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-md-4">
-                <div class="single_service service_bg_2">
-                    <div class="service_hover">
-                        <img src="~/img/svg_icon/bar-chart.svg" alt="" style="width: 45px; height: 40px;">
-                        <h3>Consultoría Financiera y Tributaria</h3>
-                        <div class="hover_content">
-                            <div class="hover_content_inner">
-                                <a href="#" onclick="goServiceSection('GrupoTributarioId')">
-                                    <h4>Consultoría Financiera y Tributaria</h4>
-                                    <p>Haz el análisis y la valoración requerida para la toma de decisiones con beneficio financiero.</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-4">
-                <div class="single_service service_bg_4">
-                    <div class="service_hover">
-                        <img src="~/img/svg_icon/puzzle.svg" alt="" style="width: 45px; height: 40px;">
-                        <h3>Auditoría y Revisoría Fiscal</h3>
-                        <div class="hover_content">
-                            <div class="hover_content_inner">
-                                <a href="#" onclick="goServiceSection('GrupoAuditoriaId')">
-                                    <h4>Auditoría y Revisoría Fiscal<br />&nbsp;</h4>
-                                    <p>Realiza un peritaje para mantener la gestión contable y administrativa en orden.</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
         @*<div class="row">
             <div class="col-xl-6 col-md-6">

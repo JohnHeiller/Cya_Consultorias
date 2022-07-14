@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AppWeb.CyaConsultorias.Models
 {
-    public class ConfiguracionModel
+    public class ConfiguracionServiciosModel
     {
         public List<ServicesModel> ServicesModel { get; set; }
     }
@@ -12,6 +12,8 @@ namespace AppWeb.CyaConsultorias.Models
     {
         public string Id { get; set; }
         public string Title { get; set; }
+        public string UrlSmallBackgroundImage { get; set; }
+        public string UrlBigBackgroundImage { get; set; }
         public string OnClick { get; set; }
         public string Href { get; set; }
         public string UrlIcon { get; set; }
