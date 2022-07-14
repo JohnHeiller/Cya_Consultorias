@@ -17,31 +17,35 @@ namespace AppWeb.CyaConsultorias.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IEmailSender _emailSender;
+        private ConfiguracionServiciosModel _configServiciosModel;
 
         public HomeController(ILogger<HomeController> logger, IEmailSender emailSender)
         {
             _logger = logger;
             _emailSender = emailSender;
+            //_configServiciosModel = new ConfiguracionServiciosModel();
+        }
+
+        private void GetServicesData()
+        {
+            try
+            {
+                _configServiciosModel = new ConfiguracionServiciosModel();
+                using StreamReader jsonStream = System.IO.File.OpenText(Constantes.ServiciosJsonPath);
+                var json = jsonStream.ReadToEnd();
+                _configServiciosModel = JsonConvert.DeserializeObject<ConfiguracionServiciosModel>(json);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error en la obtención de datos de servicios");
+                Error();
+            }
         }
 
         public IActionResult Index()
         {
-            ConfiguracionModel configuracionModel = new ConfiguracionModel
-            {
-                ServicesModel = new List<ServicesModel>()
-            };
-            ServicesModel servicesModel = new ServicesModel
-            {
-                Sections = new List<SectionModel>(),
-                Details = new List<DetailModel>()
-            };
-            SectionModel sectionModel = new SectionModel();
-            DetailModel detailModel = new DetailModel();
-            servicesModel.Sections.Add(sectionModel);
-            servicesModel.Details.Add(detailModel);
-            configuracionModel.ServicesModel.Add(servicesModel);
-            var test = JsonConvert.SerializeObject(configuracionModel);
-            return View();
+            GetServicesData();
+            return View(_configServiciosModel);
         }
 
         public IActionResult Privacy()
@@ -58,8 +62,12 @@ namespace AppWeb.CyaConsultorias.Controllers
         [Route("/Services/{section}")]
         public IActionResult Services(string section)
         {
+            if (_configServiciosModel == null)
+            {
+                GetServicesData();
+            }
             ViewData["serviceSectionView"] = section;
-            return View();
+            return View(_configServiciosModel);
         }
 
         private Blog GetBlogList()

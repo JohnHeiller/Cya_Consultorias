@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Servicios";
 }
+@model AppWeb.CyaConsultorias.Models.ConfiguracionServiciosModel
 <!-- bradcam_area  -->
 <input id="serviceSectionView" value="@ViewData["serviceSectionView"]" hidden />
 <div class="bradcam_area breadcam_bg_2" id="InitServicesId">
@@ -21,42 +22,18 @@
         <div class="row">
             <div class="col-xl-6 col-lg-6">
                 <div class="financial_active owl-carousel">
-                    <div class="single_finalcial_wrap">
-                        <h3>
-                            Revisoría Fiscal
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div class="single_finalcial_wrap">
-                        <h3>
-                            Auditoría Externa
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div class="single_finalcial_wrap">
-                        <h3>
-                            Selección de Talento Humano
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div class="single_finalcial_wrap">
-                        <h3>
-                            Asesoría Jurídica y Mercantíl
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div class="single_finalcial_wrap">
-                        <h3>
-                            Evaluación de Proyectos
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div class="single_finalcial_wrap">
-                        <h3>
-                            Consultoría y Asesoría en NIIF, NIC-SP y NIAS
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
+                    @foreach (var detailServiceList in Model.ServicesModel.Select(x => x.Details).ToList())
+                    {
+                        @foreach (var detailService in detailServiceList)
+                        {
+                            <div class="single_finalcial_wrap">
+                                <h3>
+                                    @Html.Raw(detailService.Title)
+                                </h3>
+                                <p>@detailService.Description</p>
+                            </div>
+                        }
+                    }
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">
@@ -69,264 +46,55 @@
 </div>
 <!--/ soluciones -->
 <!-- servicios 1 -->
-<div class="about_wrap_area about_bg_1" id="GrupoNegociosId">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="section_title text-center mb-20">
-                    <h3 style="color:white;">Consultoría Empresarial</h3>
+@foreach (var serviceItem in Model.ServicesModel)
+{
+    <div class="about_wrap_area" id="@serviceItem.Id" style="background-image: url(@serviceItem.UrlBigBackgroundImage)">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-20">
+                        <h3 style="color:white;">@Html.Raw(serviceItem.Title)</h3>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-md-6 col-lg-4">
-                <div class="single_service_wrap text-center">
-                    <img src="img/svg_icon/controls.svg" alt="">
-                    <a href="#ServicioGrupoNegocios1Id">
-                        <h3>Desarrollo Comercial</h3>
-                        <p>Con gestión multidisciplinar para tus productos y servicios, accede a nuevos mercados o identifica clientes potenciales.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-lg-4">
-                <div class="single_service_wrap text-center">
-                    <img src="img/svg_icon/bar-chart.svg" alt="">
-                    <a href="#ServicioGrupoNegocios2Id">
-                        <h3>Evaluación de Proyectos</h3>
-                        <p>Contempla estudios técnicos para la toma de desiciones sobre tus proyectos empresariales.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-lg-4">
-                <div class="single_service_wrap text-center">
-                    <img src="img/svg_icon/puzzle.svg" alt="">
-                    <a href="#ServicioGrupoNegocios3Id">
-                        <h3>Selección de Talento Humano</h3>
-                        <p>Te apoyaremos en la integración de nuevos colaboradores para tu empresa.</p>
-                    </a>
-                </div>
+            <div class="row">
+                @foreach (var sectionItem in serviceItem.Sections)
+                {
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="single_service_wrap text-center">
+                            <img src="@sectionItem.UrlIcon" alt="">
+                            <a href="@sectionItem.Href">
+                                <h3>@Html.Raw(sectionItem.Title)</h3>
+                                <p>@sectionItem.Summery</p>
+                            </a>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
-</div>
-<!--/ servicios 1 -->
-<!--/ bradcam_area  -->
-<div class="portfolio_details_area">
-    <div class="container">
-        <div class="row" id="ServicioGrupoNegocios1Id">
-            <div class="col-xl-8 offset-xl-2">
-                <div class="portfolio_details_content text-center mb-50">
-                    <h3>Desarrollo Comercial<br /></h3>
-                    <p>Con gestión multidisciplinar para tus productos y servicios, accede a nuevos mercados o identifica clientes potenciales. El desarrollo comercial es el motor de la empresa, nos encaminaremos a reforzar las ventas, definir nuevas oportunidades y diseñar estrategias de comercialización para seguir creciendo.</p>
+    <div class="portfolio_details_area">
+        <div class="container">
+            @foreach (var detailItem in serviceItem.Details)
+            {
+                <div class="row" id="@detailItem.Id">
+                    <div class="col-xl-8 offset-xl-2">
+                        <div class="portfolio_details_content text-center mb-50">
+                            <h3>@Html.Raw(detailItem.Title)</h3>
+                            <p>@detailItem.Description</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="portfolio_details_thumb">
+                            <img src="@detailItem.UrlImage" alt="">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="portfolio_details_thumb">
-                    <img src="~/img/gallery/business_up1.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row" id="ServicioGrupoNegocios2Id">
-            <div class="col-xl-8 offset-xl-2">
-                <div class="portfolio_details_content mt-50 mb-50 text-center">
-                    <h3>Evaluación de Proyectos</h3>
-                    <p>Identifica la conveniencia para inversiones futuras, analizando la asignación de recursos de manera optima, y contemplando estudios técnicos, de mercado, legales organizacionales y ambientales, como instrumentos para la toma de desiciones sobre los proyectos empresariales.</p>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="portfolio_details_thumb">
-                    <img src="~/img/gallery/projects_up1.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row" id="ServicioGrupoNegocios3Id">
-            <div class="col-xl-8 offset-xl-2">
-                <div class="portfolio_details_content mt-50 mb-50 text-center">
-                    <h3>Selección de Talento Humano</h3>
-                    <p>Te apoyaremos en la integración de nuevos colaboradores para tu empresa. A través de comunicación interna, avisos de prensa, ferias de trabajo, portales web de empleo, redes sociales o agencias externas tendrás candidatos y podrás aplicaremos diversas estrategias durante la selección.</p>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="portfolio_details_thumb">
-                    <img src="~/img/gallery/human_talent1.png" alt="">
-                </div>
-            </div>
+                <br />
+            }
         </div>
     </div>
-</div>
-
-<!-- servicios 1 -->
-<div class="about_wrap_area about_bg_2" id="GrupoTributarioId">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="section_title text-center mb-20">
-                    <h3 style="color:white;">Consultoría Financiera y Tributaria</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-md-6 col-lg-4">
-                <div class="single_service_wrap text-center">
-                    <img src="img/svg_icon/controls.svg" alt="">
-                    <a href="#ServicioGrupoTributario1Id">
-                        <h3>Declaración de Renta, Retención en la Fuente, IVA, e Industria y Comercio</h3>
-                        <p>Expresa aquellas actividades realizadas, así como hechos susceptibles de ser gravados con un determinado impuesto.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-lg-4">
-                <div class="single_service_wrap text-center">
-                    <img src="img/svg_icon/bar-chart.svg" alt="">
-                    <a href="#ServicioGrupoTributario2Id">
-                        <h3>Consultoría y Asesoría en NIIF, NIC-SP y NIAS<br />&nbsp;</h3>
-                        <p>Te apoyaremos en el proceso de conversión a los nuevos marcos técnicos normativos en información financiera.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-lg-4">
-                <div class="single_service_wrap text-center">
-                    <img src="img/svg_icon/puzzle.svg" alt="">
-                    <a href="#ServicioGrupoTributario3Id">
-                        <h3><br />Evaluación de Planes y Estados Financieros<br /></h3>
-                        <p>Analizaremos la situación financiera actual y futura de la empresa, documentando tu información contable para un periodo de tiempo.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--/ servicios 1 -->
-<!--/ bradcam_area  -->
-<div class="portfolio_details_area">
-    <div class="container">
-        <div class="row" id="ServicioGrupoTributario1Id">
-            <div class="col-xl-8 offset-xl-2">
-                <div class="portfolio_details_content text-center mb-50">
-                    <h3>Declaración de Renta, Retención en la Fuente, IVA, e Industria y Comercio</h3>
-                    <p>Expresa aquellas actividades realizadas, así como hechos susceptibles de ser gravados con un determinado impuesto. Refleja la cantidad de ingresos ganados en un año en específico e informa tu situación patrimonial para rendir cuentas al Estado.</p>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="portfolio_details_thumb">
-                    <img src="~/img/gallery/declaracion1.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row" id="ServicioGrupoTributario2Id">
-            <div class="col-xl-8 offset-xl-2">
-                <div class="portfolio_details_content mt-50 mb-50 text-center">
-                    <h3>Consultoría y Asesoría en NIIF, NIC-SP y NIAS</h3>
-                    <p>Te apoyaremos en el proceso de conversión a los nuevos marcos técnicos normativos en información financiera, con el diseño de manuales de políticas contables específicos para su organización, y en la preparación de Estados Financieros bajo los nuevos marcos técnicos. Te acompañaremos en el proceso de implementación de las Normas Internacionales de Información Financiera – NIIF o Normas Internacionales de Contabilidad para el Sector Público NIC – SP.</p>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="portfolio_details_thumb">
-                    <img src="~/img/gallery/normas-internacionales.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row" id="ServicioGrupoTributario3Id">
-            <div class="col-xl-8 offset-xl-2">
-                <div class="portfolio_details_content mt-50 mb-50 text-center">
-                    <h3>Evaluación de Planes y Estados Financieros</h3>
-                    <p>Analizaremos la situación financiera actual y futura de la empresa. Documentaremos la información contable de la empresa de manera agrupada y totalizada en un determinado período de tiempo. Seguiremos la estructura marcada por el plan general de contabilidad, y aplicaremos los principios de contabilidad aceptados por la empresa.</p>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="portfolio_details_thumb">
-                    <img src="~/img/gallery/equipo.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- servicios 3 -->
-<div class="about_wrap_area about_bg_2" id="GrupoAuditoriaId">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="section_title text-center mb-20">
-                    <h3 style="color:white;">Auditoría y Revisoría Fiscal</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-md-6 col-lg-4">
-                <div class="single_service_wrap text-center">
-                    <img src="img/svg_icon/controls.svg" alt="">
-                    <a href="#ServicioAuditoria1Id">
-                        <h3><br />Revisoría Fiscal&nbsp;</h3>
-                        <p>Revisaremos los procedimientos internos de la empresa, verificando el cumplimiento de normas estatutarias y leyes aplicables.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-lg-4">
-                <div class="single_service_wrap text-center">
-                    <img src="img/svg_icon/bar-chart.svg" alt="">
-                    <a href="#ServicioAuditoria2Id">
-                        <h3><br />Auditoría Externa<br />&nbsp;</h3>
-                        <p>Supervisaremos información sobre estados financieros y comerciales para análizar y controlar la marcha de la empresa.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-lg-4">
-                <div class="single_service_wrap text-center">
-                    <img src="img/svg_icon/puzzle.svg" alt="">
-                    <a href="#ServicioAuditoria3Id">
-                        <h3><br />Control Interno<br />&nbsp;</h3>
-                        <p>Velaremos para que tus actividades y operaciones sean de acuerdo con las normas constitucionales y legales vigentes.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--/ servicios 1 -->
-<!--/ bradcam_area  -->
-<div class="portfolio_details_area">
-    <div class="container">
-        <div class="row" id="ServicioAuditoria1Id">
-            <div class="col-xl-8 offset-xl-2">
-                <div class="portfolio_details_content text-center mb-50">
-                    <h3>Revisoría Fiscal</h3>
-                    <p>Te ayudaremos a revisar los procedimientos internos de la empresa, verificando el cumplimiento de normas estatutarias, y leyes que le son aplicables. Brindaremos la confianza al público en general sobre la información representada en la contabilidad y los estados financieros.</p>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="portfolio_details_thumb">
-                    <img src="~/img/gallery/fiscal.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row" id="ServicioAuditoria2Id">
-            <div class="col-xl-8 offset-xl-2">
-                <div class="portfolio_details_content mt-50 mb-50 text-center">
-                    <h3>Auditoría Externa</h3>
-                    <p>Supervisaremos información sobre estados financieros y comerciales para análizar y controlar la marcha de la empresa. Daremos informe de auditoría fidedigno y veraz para terceras partes interesadas, documentando con fe pública y total credibilidad la información recolectada.</p>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="portfolio_details_thumb">
-                    <img src="~/img/gallery/auditoria-externa.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row" id="ServicioAuditoria3Id">
-            <div class="col-xl-8 offset-xl-2">
-                <div class="portfolio_details_content mt-50 mb-50 text-center">
-                    <h3>Control Interno</h3>
-                    <p>Velaremos para que todas las actividades, operaciones y actuaciones se realicen de acuerdo con las normas constitucionales y legales vigentes. Apoyando el establecimiento de principios, métodos y procedimientos coordinados entre sí, para proteger los recursos de la entidad, contra fraudes y errores sobre los procesos de la empresa.</p>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="portfolio_details_thumb">
-                    <img src="~/img/gallery/asesoria-interna.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+}
 
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script>

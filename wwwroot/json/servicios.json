@@ -1,0 +1,157 @@
+{
+  "ServicesModel": [
+    {
+      "Id": "GrupoNegociosId",
+      "Title": "Consultoría Empresarial",
+      "UrlSmallBackgroundImage": "../img/about/business1.png",
+      "UrlBigBackgroundImage": "../img/banner/business_bg.png",
+      "OnClick": "goServiceSection('GrupoNegociosId')",
+      "Href": "#",
+      "UrlIcon": "/img/svg_icon/case.svg",
+      "TitleHover": "Consultoría Empresarial",
+      "SummeryIndex": "Aplica estrategias de operación, control, innovación y gestión en los negocios. ",
+      "Sections": [
+        {
+          "Title": "Desarrollo Comercial",
+          "Summery": "Con gestión multidisciplinar para tus productos y servicios, accede a nuevos mercados o identifica clientes potenciales.",
+          "UrlIcon": "img/svg_icon/controls.svg",
+          "Href": "#ServicioGrupoNegocios1Id"
+        },
+        {
+          "Title": "Evaluación de Proyectos",
+          "Summery": "Contempla estudios técnicos para la toma de desiciones sobre tus proyectos empresariales.",
+          "UrlIcon": "img/svg_icon/bar-chart.svg",
+          "Href": "#ServicioGrupoNegocios2Id"
+        },
+        {
+          "Title": "Selección de Talento Humano",
+          "Summery": "Te apoyaremos en la integración de nuevos colaboradores para tu empresa.",
+          "UrlIcon": "img/svg_icon/puzzle.svg",
+          "Href": "#ServicioGrupoNegocios3Id"
+        }
+      ],
+      "Details": [
+        {
+          "Title": "Desarrollo Comercial<br />",
+          "Description": "Con gestión multidisciplinar para tus productos y servicios, accede a nuevos mercados o identifica clientes potenciales. El desarrollo comercial es el motor de la empresa, nos encaminaremos a reforzar las ventas, definir nuevas oportunidades y diseñar estrategias de comercialización para seguir creciendo.",
+          "UrlImage": "/img/gallery/business_up1.png",
+          "Id": "ServicioGrupoNegocios1Id"
+        },
+        {
+          "Title": "Evaluación de Proyectos",
+          "Description": "Identifica la conveniencia para inversiones futuras, analizando la asignación de recursos de manera optima, y contemplando estudios técnicos, de mercado, legales organizacionales y ambientales, como instrumentos para la toma de desiciones sobre los proyectos empresariales.",
+          "UrlImage": "/img/gallery/projects_up1.png",
+          "Id": "ServicioGrupoNegocios2Id"
+        },
+        {
+          "Title": "Selección de Talento Humano",
+          "Description": "Te apoyaremos en la integración de nuevos colaboradores para tu empresa. A través de comunicación interna, avisos de prensa, ferias de trabajo, portales web de empleo, redes sociales o agencias externas tendrás candidatos y podrás aplicaremos diversas estrategias durante la selección.",
+          "UrlImage": "/img/gallery/human_talent1.png",
+          "Id": "ServicioGrupoNegocios3Id"
+        }
+      ]
+    },
+    {
+      "Id": "GrupoTributarioId",
+      "Title": "Consultoría Financiera y Tributaria",
+      "UrlSmallBackgroundImage": "../img/about/tributaria1.png",
+      "UrlBigBackgroundImage": "../img/banner/tributaria_bg.png",
+      "OnClick": "goServiceSection('GrupoTributarioId')",
+      "Href": "#",
+      "UrlIcon": "/img/svg_icon/bar-chart.svg",
+      "TitleHover": "Consultoría Financiera y Tributaria",
+      "SummeryIndex": "Haz el análisis y la valoración requerida para la toma de decisiones con beneficio financiero.",
+      "Sections": [
+        {
+          "Title": "Declaración de Renta, Retención en la Fuente, IVA, e Industria y Comercio",
+          "Summery": "Expresa aquellas actividades realizadas, así como hechos susceptibles de ser gravados con un determinado impuesto.",
+          "UrlIcon": "img/svg_icon/controls.svg",
+          "Href": "#ServicioGrupoTributario1Id"
+        },
+        {
+          "Title": "Consultoría y Asesoría en NIIF, NIC-SP y NIAS<br />&nbsp;",
+          "Summery": "Te apoyaremos en el proceso de conversión a los nuevos marcos técnicos normativos en información financiera.",
+          "UrlIcon": "img/svg_icon/bar-chart.svg",
+          "Href": "#ServicioGrupoTributario2Id"
+        },
+        {
+          "Title": "<br />Evaluación de Planes y Estados Financieros<br />",
+          "Summery": "Analizaremos la situación financiera actual y futura de la empresa, documentando tu información contable para un periodo de tiempo.",
+          "UrlIcon": "img/svg_icon/puzzle.svg",
+          "Href": "#ServicioGrupoTributario3Id"
+        }
+      ],
+      "Details": [
+        {
+          "Title": "Declaración de Renta, Retención en la Fuente, IVA, e Industria y Comercio",
+          "Description": "Expresa aquellas actividades realizadas, así como hechos susceptibles de ser gravados con un determinado impuesto. Refleja la cantidad de ingresos ganados en un año en específico e informa tu situación patrimonial para rendir cuentas al Estado.",
+          "UrlImage": "/img/gallery/declaracion1.jpg",
+          "Id": "ServicioGrupoTributario1Id"
+        },
+        {
+          "Title": "Consultoría y Asesoría en NIIF, NIC-SP y NIAS",
+          "Description": "Te apoyaremos en el proceso de conversión a los nuevos marcos técnicos normativos en información financiera, con el diseño de manuales de políticas contables específicos para su organización, y en la preparación de Estados Financieros bajo los nuevos marcos técnicos. Te acompañaremos en el proceso de implementación de las Normas Internacionales de Información Financiera – NIIF o Normas Internacionales de Contabilidad para el Sector Público NIC – SP.",
+          "UrlImage": "/img/gallery/normas-internacionales.jpg",
+          "Id": "ServicioGrupoTributario2Id"
+        },
+        {
+          "Title": "Evaluación de Planes y Estados Financieros",
+          "Description": "Analizaremos la situación financiera actual y futura de la empresa. Documentaremos la información contable de la empresa de manera agrupada y totalizada en un determinado período de tiempo. Seguiremos la estructura marcada por el plan general de contabilidad, y aplicaremos los principios de contabilidad aceptados por la empresa.",
+          "UrlImage": "/img/gallery/equipo.png",
+          "Id": "ServicioGrupoTributario3Id"
+        }
+      ]
+    },
+    {
+      "Id": "GrupoAuditoriaId",
+      "Title": "Auditoría y Revisoría Fiscal",
+      "UrlSmallBackgroundImage": "../img/about/experts.png",
+      "UrlBigBackgroundImage": "../img/banner/auditoria_bg.jpg",
+      "OnClick": "goServiceSection('GrupoAuditoriaId')",
+      "Href": "#",
+      "UrlIcon": "/img/svg_icon/puzzle.svg",
+      "TitleHover": "Auditoría y Revisoría Fiscal<br />&nbsp;",
+      "SummeryIndex": "Realiza un peritaje para mantener la gestión contable y administrativa en orden.",
+      "Sections": [
+        {
+          "Title": "<br />Revisoría Fiscal&nbsp;",
+          "Summery": "Revisaremos los procedimientos internos de la empresa, verificando el cumplimiento de normas estatutarias y leyes aplicables.",
+          "UrlIcon": "img/svg_icon/controls.svg",
+          "Href": "#ServicioAuditoria1Id"
+        },
+        {
+          "Title": "<br />Auditoría Externa<br />&nbsp;",
+          "Summery": "Supervisaremos información sobre estados financieros y comerciales para análizar y controlar la marcha de la empresa.",
+          "UrlIcon": "img/svg_icon/bar-chart.svg",
+          "Href": "#ServicioAuditoria2Id"
+        },
+        {
+          "Title": "<br />Control Interno<br />&nbsp;",
+          "Summery": "Velaremos para que tus actividades y operaciones sean de acuerdo con las normas constitucionales y legales vigentes.",
+          "UrlIcon": "img/svg_icon/puzzle.svg",
+          "Href": "#ServicioAuditoria3Id"
+        }
+      ],
+      "Details": [
+        {
+          "Title": "Revisoría Fiscal",
+          "Description": "Te ayudaremos a revisar los procedimientos internos de la empresa, verificando el cumplimiento de normas estatutarias, y leyes que le son aplicables. Brindaremos la confianza al público en general sobre la información representada en la contabilidad y los estados financieros.",
+          "UrlImage": "/img/gallery/fiscal.jpg",
+          "Id": "ServicioAuditoria1Id"
+        },
+        {
+          "Title": "Auditoría Externa",
+          "Description": "Supervisaremos información sobre estados financieros y comerciales para análizar y controlar la marcha de la empresa. Daremos informe de auditoría fidedigno y veraz para terceras partes interesadas, documentando con fe pública y total credibilidad la información recolectada.",
+          "UrlImage": "/img/gallery/auditoria-externa.jpg",
+          "Id": "ServicioAuditoria2Id"
+        },
+        {
+          "Title": "Control Interno",
+          "Description": "Velaremos para que todas las actividades, operaciones y actuaciones se realicen de acuerdo con las normas constitucionales y legales vigentes. Apoyando el establecimiento de principios, métodos y procedimientos coordinados entre sí, para proteger los recursos de la entidad, contra fraudes y errores sobre los procesos de la empresa.",
+          "UrlImage": "/img/gallery/asesoria-interna.jpg",
+          "Id": "ServicioAuditoria3Id"
+        }
+      ]
+    }
+  ]
+}
